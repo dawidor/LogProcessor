@@ -6,9 +6,11 @@ import com.csgroup.tests.integrations.JsonFileReaderTest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.springframework.util.ResourceUtils;
+import org.junit.Ignore;
 
 import java.io.*;
 
+@Ignore
 public class LargeJsonGenertor {
 
     @Test
