@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+    }
+}
+
+group 'com.csgroup'
+version '1.0'
+
+apply plugin: 'application'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName="com.csgroup.LogProcessorMain"
+
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '${SPRING_BOOT_VERSION}'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
+    compile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.0.2.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "${LIB_JACKSON_VERSION}"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${LIB_JACKSON_VERSION}"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:  "${LIB_JACKSON_VERSION}"
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${SPRING_BOOT_VERSION}"
+    testCompile 'org.mockito:mockito-core:2.7.22'
+}
